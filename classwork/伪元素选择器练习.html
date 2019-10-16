@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p::first-letter {
+            font-size: 24px;
+        }
+        p::first-line {
+            background-color: skyblue;
+        }
+        p::before {
+            content: '>';
+        }
+        input[type] {
+            background-color: #ccc;
+        }
+        input[type=radio]:nth-of-type(3)~span:nth-of-type(3) {
+            color: skyblue;
+        }
+        input[type=checkbox]:checked {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫</p>
+    <p>你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫</p>
+    <p>你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫你路上的风景哦啊圣诞节弗拉索夫</p>
+    <form action="demo.php" method="get">
+        <label for="">用户名：</label><input type="text" name="username" required="required" autofocus="autofocus" autocomplete="off"><br>
+        密码：<input type="password" name="password" required><br>
+        喜欢的课程：
+        <input type="radio" name="fav" value="html"><span>html</span>
+        <input type="radio" name="fav" value="css"><span>css</span>
+        <input type="radio" name="fav" value="js"><span>js</span>
+        <br>
+        喜欢的课程：
+        <label><input type="checkbox" name="like" value="html">html</label>
+        <label><input type="checkbox" name="like" value="css">css</label>
+        <label><input type="checkbox" name="like" value="js">js</label>
+        <br>
+        <!-- <input type="image" src="honor/images/skew-mask.png"> -->
+        <input type="file">
+        <input type="button" value="btn">
+        <input type="reset">
+        <input type="hidden">
+        <input type="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.menu{
+				width: 774px;
+				height: 210px;
+				background: url(images/menu-bg.jpg);
+				position: relative;
+			}
+			li{
+				position: absolute;
+				list-style: none;
+			}
+			span{
+				display: none;
+				position: absolute;
+			}
+			li:hover span{
+				display: block;
+			}
+			li.home{
+				top: 70px;
+				left: 68px;
+				width: 144px;
+				height: 54px;
+				background: url(images/home.gif);
+			}
+			
+			li.home:hover{
+				top: 74px;
+				background-position: left bottom;
+			}
+			
+			li.home>span{
+				width: 144px;
+				height: 54px;
+				top: -20px;
+				left: 29px;
+				background: url(images/home-over.gif) no-repeat;
+			}
+			li.about{
+				top: 96px;
+				left: 346px;
+				width: 131px;
+				height: 46px;
+				background: url(images/about.gif);
+			}
+			li.about:hover{
+				top: 101px;
+				background-position: left bottom;
+			}
+			
+			li.about>span{
+				width: 40px;
+				height: 12px;
+				top: 52px;
+				left: 46px;
+				background: url(images/about-over.gif) no-repeat;
+			}
+			
+			li.rss{
+				top: 90px;
+				left: 600px;
+				width: 112px;
+				height: 47px;
+				background: url(images/rss.gif);
+			}
+			li.rss:hover{
+				top: 90px;
+				background-position: left bottom;
+			}
+			
+			li.rss>span{
+				width: 92px;
+				height: 20px;
+				top: -20px;
+				left: 28px;
+				background: url(images/rss-over.gif) no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="menu">
+			<li class="home"><span></span></li>
+			<li class="about"><span></span></li>
+			<li class="rss"><span></span></li>
+		</ul>
+	</body>
+</html>

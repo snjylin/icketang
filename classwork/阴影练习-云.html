@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阴影练习-云</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .cloud1 {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            border-radius: 50%;
+            box-shadow: 50px -20px 0px 0px gray, 0px -50px 0px 0px gray, -50px 0px 0px 0px gray;
+        }
+        .cloud2 {
+            width: 80px;
+            height: 80px;
+            background-color: gray;
+            border-radius: 50%;
+            box-shadow: 50px -20px 0px 0px gray, 0px -50px 0px 0px gray, -50px 0px 0px 0px gray, -50px 0px 0px 0px gray;
+        }
+        .posa {
+            position: absolute;
+        }
+        .pos1 {
+            left: 100px;
+            top: 100px;
+        }
+        .pos2 {
+            left: 300px;
+            top: 220px;
+        }
+        .pos3 {
+            left: 500px;
+            top: 30px;
+        }
+        .pos4 {
+            left: 700px;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cloud1 posa pos1"></div>
+    <div class="cloud2 posa pos2"></div>
+    <div class="cloud1 posa pos3"></div>
+    <div class="cloud1 posa pos4"></div>
+</body>
+</html>
