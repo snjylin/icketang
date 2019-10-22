@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>响应式布局-媒介查询</title>
+    <!-- 公共样式 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .wrap>div {
+            width: 33%;
+            height: 100px;
+        }
+        .box1 {
+            background-color: red;
+        }
+        .box2 {
+            background-color: green;
+        }
+        .box3 {
+            background-color: blue;
+        }
+    </style>
+    <!-- 限定视口宽度大于1200px -->
+    <style media="screen and (max-width: 960px)">
+        .wrap>div {
+            width: 49%;
+        }
+    </style>
+    <style media="screen and (max-width: 768px)">
+        .wrap>div {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

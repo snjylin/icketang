@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+.adult {
+    /* width: 100px; */
+    margin: auto;
+}
+/* ====== 头部 S ====== */
+.hd {
+    width: 90px;
+    height: 108px;
+    margin: auto;
+}
+.hear {
+    height: 42px;
+    background-color: #e0df47;
+}
+.face {
+    overflow: hidden;
+    position: relative;
+    width: 64px;
+    height: 66px;
+    margin: auto;
+}
+.face-mask {
+    width: 70px;
+    height: 180px;
+    margin-top: -114px;
+    margin-left: -3px;
+    background-color: #e9bc9f;
+    border-radius: 50%;
+}
+.headband {
+    position: absolute;
+    z-index: 5;
+    width: 40px;
+    height: 16px;
+    border: 3px solid #191500;
+    border-width: 3px 12px;
+    background: linear-gradient(to right, #fffff6, #989491);
+    border-radius: 8px;
+    text-align: center;
+}
+.headband .leaf::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #50554f;
+    border-radius: 4px 4px 4px 0;
+    position: absolute;
+    left: -3px;
+    top: -3px;
+}
+.headband .leaf::after {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-right: 1px solid #50554f;
+    border-bottom: 1px solid #50554f;
+    border-bottom-right-radius: 3px;
+    position: absolute;
+    right: -4px;
+    top: -6px;
+    transform: rotate(25deg);
+}
+.headband .leaf {
+    position: relative;
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border: 1px solid #50554f;
+    border-radius: 3px;
+    line-height: 20px;
+}
+[class$=-eye] {
+    position: absolute;
+    top: 22px;
+    width: 12px;
+    height: 6px;
+    border-style: solid;
+    border-color: #7b582e;
+}
+[class$=-eye]::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background-color: #7b582e;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+}
+.left-eye {
+    left: 8px;
+    border-width: 3px 5px 4px 4px;
+    border-radius: 1px 2px 3px 2px;
+}
+.right-eye {
+    right: 8px;
+    border-width: 3px 4px 4px 5px;
+    border-radius: 1px 2px 3px 2px;
+}
+.left-eye::before {
+    left: 7px;
+}
+.right-eye::before {
+    right: 7px;
+}
+/* ====== 头部 E ====== */
+
+/* ====== 身体 E ====== */
+.bd {
+    width: 120px;
+    height: 380px;
+    margin: auto;
+    background-color: #b23823;
+}
+/* ====== 身体 E ====== */
+
+/* ====== 脚部 E ====== */
+.ft {
+    width: 60px;
+    height: 55px;
+    margin: auto;
+    background-color: #f7cdb4;
+}
+/* ====== 脚部 E ====== */

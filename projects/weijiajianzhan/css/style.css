@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+/* 重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 页面主体样式 */
+.wrap {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+figure {
+    width: 33%;
+    text-align: center;
+}
+figure img {
+    width: 100%;
+}
+figcaption {
+    width: 100%;
+    padding: 18px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+h2 {
+    font-size: 22px;
+    line-height: 30px;
+}
+a {
+    display: inline-block;
+    width: 112px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #6fba2c;
+    line-height: 40px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 980px) {
+    figure {
+        width: 49%;
+    }
+}
+@media screen and (max-width: 768px) {
+    figure {
+        width: 100%;
+    }
+}

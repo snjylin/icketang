@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            圣杯布局和双飞翼布局，和固比固布局有点类似，解决的是左右边栏固定，中间栏自适应的问题；
+            但是要求中间栏优先渲染；
+            圣杯布局出自西方的一篇文章a list part上的文章，寓意渴求之物；
+            双飞翼布局产自淘宝UED团队，灵感来自于页面布局
+
+
+            双飞翼和圣杯布局解决问题类似，布局也大体相同，但是双飞翼布局比圣杯布局多了一个盒子；
+            对于中间栏内容的遮挡处理问题，圣杯使用的是padding + 相对定位解决；双飞翼布局使用的是margin解决
+
+
+            CSS3之后，可以借助box-sizing:border-box;和弹性盒子完成更好的优化，但是浏览器对CSS3兼容性稍差。
+        */
+
+
+        body{
+            min-width: 900px;
+            margin: 0;
+        }
+
+
+        .wrap{
+            height: 400px;
+            /*解决内容遮挡问题*/
+            padding: 0 300px 0 300px;
+            background-color: #E3E3E3;
+        }
+
+
+        .main{
+            /*box-sizing: border-box;*/
+            float: left;
+            height: 100%;
+            width: 100%;
+            /*padding: 0 300px 0 300px;*/
+            background: yellow;
+        }
+
+
+        .wrap>aside{
+            float: left;
+            height: 100%;
+            width: 300px;
+            background-color: red;
+        }
+
+
+        .wrap>aside.left{
+            margin-left: -100%;
+
+
+            position: relative;
+            left: -300px;
+        }
+        .wrap>aside.right{
+            margin-left: -300px;
+
+
+            position: relative;
+            right: -300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="main">中间主要内容优先渲染</div>
+        <aside class="left">左边栏</aside>
+        <aside class="right">右边栏</aside>
+    </div>
+</body>
+</html>

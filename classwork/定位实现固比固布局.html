@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            min-width: 900px;
+            margin:0;
+        }
+
+
+        .wrap{
+            height: 400px;
+            background-color: lightgray;
+
+
+            position: relative;
+        }
+
+
+        .left{
+            width: 260px;
+            height: 100%;
+            background-color: red;
+
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+
+
+
+        .right{
+            width: 320px;
+            height: 100%;
+            background-color: yellow;
+
+
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+
+        .center{
+            height: 120%;
+            /*padding: 0 330px 0 270px;*/
+            margin: 0 330px 0 270px;
+            background-color: #00b1e8;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <aside class="left">左边栏</aside>
+        <aside class="right">右边栏</aside>
+        <div class="center">中间栏</div>
+    </div>
+</body>
+</html>

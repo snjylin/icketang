@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button onclick="f()">alert()弹出警告框</button>
+    <button onclick="f1()">document页面输出数据</button>
+    <button id="btn3">element.innerText</button>
+    <button id="btn4">element.innerHTML</button>
+    <div id="box1"></div>
+</body>
+<script>
+    //alert()警告框
+    function f() {
+        window.alert("hello javascript!!");
+    }
+
+
+    //document.write() 向页面文档写入数据
+    function f1() {
+        document.write("document一般只随页面加载使用一次，不建议在页面加载完成后使用！！")
+    }
+
+
+    //element.innerText /  element.innerHTML
+    // function f2(){
+        //console.log(this); //Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+        // this.innerText = "element.innerText只能向元素中写入文本";
+    // }
+    //上面有问题,使用下面方式操作
+    //获取id=btn3的button元素
+    var btn3 = document.getElementById("btn3");
+    var btn4 = document.getElementById("btn4");
+    var box1 = document.getElementById("box1");
+
+
+    //在浏览器控制台打印数据
+    console.log(btn3);
+
+
+    //给元素设置点击事件
+    btn3.onclick = function () {
+        console.log(this);//此时this指代的是执行事件的这个元素btn3
+        //this.innerText = "element.innerText只能向元素中写入文本";
+        box1.innerText = "<strong>element.innerText</strong>只能向元素中写入文本"
+    }
+
+
+    btn4.onclick = function () {
+        box1.innerHTML = "<del>element.innerHTML</del>可以添加标签和文本"
+    }
+</script>
+</html>
