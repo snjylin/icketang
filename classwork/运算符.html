@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符</title>
+</head>
+<body>
+
+
+</body>
+<script>
+    // 练习1：
+    // var a = 4;
+    // var sum = 1 * (2 + 3) && a++ || 5 > 6 && 7 < 8 || 9;
+    /*
+    *  sum = 1 * (2 + 3) && a++ || 5 > 6 && 7 < 8 || 9
+    *      = 1 * 5 && a++ || 5 > 6 && 7 < 8 || 9
+    *      = 5 && a++ || 5 > 6 && 7 < 8 || 9
+    *      = 5 && a++ || false && true || 9
+    *      = a++ || false || 9
+    *      = a++ || 9
+    *      = a++
+    *
+    * sum = a++;//后加加  1. 先执行赋值操作  sum = a = 4   2. 后加加自增操作 a++ ==> a = a + 1;  ==> a = 5
+    * */
+
+
+    // console.log("a:",a,",sum:",sum);//a: 5 ,sum: 4
+
+
+    // 练习2：
+    var a = 4,
+        sum = 1 + 2 && 3 * a++ % 5 || 6 < 7 == 8 / !false
+    /*
+    *  sum = 1 + 2 && 3 * a++ % 5 || 6 < 7 == 8 / !false
+    *      = 1 + 2 && 3 * a++ % 5 || 6 < 7 == 8 / true
+    *      = 1 + 2 && 2 || 6 < 7 == 8
+    *      = 3 && 2 || 6 < 7 == 8
+    *      = 3 && 2 || true == 8
+    *      = 3 && 2 || false
+    *      = 2 || false
+    *      = 2
+    *
+    * a++ ==> a = a+1 = 5
+    * */
+    console.log("a:",a,",sum:",sum);//a: 5 ,sum: 2
+</script>
+</html>

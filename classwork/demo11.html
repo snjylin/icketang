@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        /*
+           练习3:
+               当工作年限不满1年，工资小于8000，年终奖为工资的1倍，否则是1.2倍；
+               当工作年限不满2年，工资小于10000，年终奖为工资的1.5倍，否则是1.7倍；
+               当工作年限超过2年，工资小于13000，年终奖为工资的2.3倍，否则是3倍；
+               用户输入年限，工资，输出年终奖
+         */
+        var year = Number(window.prompt('请输入年限', '1'));
+        var wages = Number(window.prompt('请输入薪水', '8000'));
+        var bonus = year >= 2 ? (wages < 13000) ? 2.3 * wages : 3 * wages : (
+            year >= 1 ? (wages < 10000 ? 1.5 * wages : 1.7 * wages) : (
+                (wages < 8000) ? 1 * wages : 1.2 * wages)
+            );
+
+        alert(bonus);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
