@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+body {
+    /* 限定视口的最大宽度 */
+    max-width: 540px;
+    /* 调整整体居中效果 */
+    margin: 0 auto;
+}
+
+/* ====== 头部 header S ====== */
+header.top-fixed {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    /* 设置弹性盒 */
+    display: flex;
+    /* 设置弹性子元素侧轴方向居中 */
+    align-items: center;
+    /* 固定定位脱离文档流，需要重新设置宽度 */
+    max-width: 540px;
+    width: 100%;
+    height: 43px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #f6f6f6;
+}
+input[type=search] {
+    width: 480px;
+    height: 24px;
+    margin-left: 8px;
+    padding-left: 24px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    background: #fff url(../img/icon.png) -52px -275px/104px no-repeat;
+    font-size: 12px;
+    flex: 1;
+    box-sizing: content-box;
+    box-shadow: 1px 2px 3px rgba(0,0,0,.2);
+}
+input::placeholder {
+    color: #666;
+}
+.login {
+    width: 50px;
+    font-size: 12px;
+    color: #099fde;
+    text-align: center;
+}
+.login i {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin-top: 4px;
+    background: url(../img/icon.png) -59px -194px/104px no-repeat;
+    vertical-align: middle;
+}
+/* ====== 头部 header E ====== */
+
+/* ====== 底部 footer E ====== */
+footer {
+    margin-top: 8px;
+    text-align: center;
+}
+.nav-menu {
+    display: flex;
+    height: 50px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 0;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-menu i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+}
+.icon-tel {
+    background: url(../img/tel1.png) 1px 1px/16px no-repeat;
+}
+.icon-download {
+    background: url(../img/down.png) 1px 1px/16px no-repeat;
+}
+.icon-my {
+    background: url(../img/my.png) 0 0/16px no-repeat;
+}
+.nav-menu p {
+    font-size: 12px;
+    color: #333;
+}
+.copyright p:first-child {
+    margin-top: 9px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #666;
+}
+.copyright .lang {
+    margin: 0 7px;
+    padding: 0 7px;
+    border-left: 1px solid #af99af;
+    border-right: 1px solid #af99af;
+}
+.copyright .lang::before {
+    content: '';
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 7px;
+    background: url(../img/foot.png) no-repeat;
+    vertical-align: -1px;
+}
+.copyright .lang::after {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin: 0 10px 0 3px;
+    border-top: 1px solid #666;
+    border-right: 1px solid #666;
+    transform: rotate(135deg);
+    vertical-align: middle;
+}
+.copyright p:last-child {
+    margin-top: 10px;
+    margin-bottom: 9px;
+    font-size: 12px;
+    line-height: 13px;
+    color: #999;
+}
+.copyright p:last-child a:first-child {
+    margin-right: 5px;
+    padding-right: 5px;
+    border-right: 1px solid #999;
+}
+/* ====== 底部 footer E ====== */

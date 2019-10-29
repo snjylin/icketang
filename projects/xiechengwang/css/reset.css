@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #333;
+}
+
+body {
+	width: 100%;
+	background-color:#f6f6f6;
+	color: #333;
+	font-family: "lanting", Helvetica, "Microsoft Yahei",Arial, STHeiti, "Microsoft JhengHei", "微軟正黑體", sans-serif;
+	font-size: 14px;
+	line-height: 1.4;
+	position: relative;
+	/*水平方向溢出滚动条*/
+	overflow-x: hidden;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+input,
+button,
+select,
+textarea,
+summary {
+	/*设置外轮廓线*/
+	outline:0;
+	background: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img,
+textarea {
+    vertical-align: middle;
+}
+
+h1 {
+    font-size: 24px;
+}
+h2 {
+    font-size: 20px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 12px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+i,
+em {
+    font-style: normal;
+}
+
+.hid {
+    display: none;
+}
+
+.clearfix:after {
+	display: block;
+	height: 0;
+	content: '';
+	clear: both;
+	visibility: hidden;
+}

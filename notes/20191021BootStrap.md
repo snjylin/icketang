@@ -52,6 +52,7 @@
 盒子的属性不可以被继承
 
 ## Bootstrap
+Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。
 [Bootstrap 官方文档](https://www.bootcss.com/)
 [Bootstrap 教程](https://www.runoob.com/bootstrap/bootstrap-tutorial.html)
 [cdnjs](https://cdnjs.com/)

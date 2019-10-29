@@ -1,0 +1,560 @@
+@charset "utf-8";
+
+/* ====== 遮罩 start ====== */
+.mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 11px;
+    background: url(../images/skew-mask.png) 0 -80px no-repeat;
+    z-index: 1;
+}
+/* ====== 遮罩 end ====== */
+
+/* ====== 轮播图部分 start ====== */
+.carousel {
+    position: relative;
+}
+.swiper {
+    position: relative;
+    height: 600px;
+    margin-top: 90px;
+    overflow: hidden;
+}
+.swiper>ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9999px;
+    animation: swiper 16s linear infinite;
+}
+@keyframes swiper {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+}
+.swiper>ul li {
+    float: left;
+}
+.swiper li.cur {
+    z-index: 1;
+}
+.swiper-btn a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, .2);
+}
+.swiper-btn-prev {
+    left: 30px;
+    background: url(../images/icon-arrow-left.png) no-repeat center;
+}
+.swiper-btn-next {
+    right: 30px;
+    background: url(../images/icon-arrow-right.png) no-repeat center;
+}
+.bt-swiper-btn {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    overflow: hidden;
+    width: 240px;
+    height: 2px;
+}
+.bt-swiper-btn li {
+    float: left;
+    width: 50px;
+    height: 2px;
+    margin: 0 5px;
+    background-color: #fff;
+}
+.bt-swiper-btn .on {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #01b5e1;
+    animation: swiper-btn 16s linear infinite;
+}
+@keyframes swiper-btn {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: 25%;
+    }
+    45% {
+        left: 25%;
+    }
+    50% {
+        left: 50%;
+    }
+    70% {
+        left: 50%;
+    }
+    75% {
+        left: 75%;
+    }
+    95% {
+        left: 75%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+.carousel .mask {
+    background-position: 0 0;
+}
+/* ====== 轮播图部分 end ====== */
+
+/* ====== 找到适合你的手机部分 start ====== */
+.search-phone {
+    position: relative;
+    background-color: #fff;
+}
+.search-phone .title {
+    height: 130px;
+    font-size: 34px;
+    text-align: center;
+    color: #333;
+    line-height: 136px;
+}
+.select-wrapper {
+    text-align: center;
+}
+.select {
+    position: relative;
+    display: inline-block;
+    width: 148px;
+    height: 38px;
+    border: 1px solid #a6a6a6;
+    line-height: 38px;
+    color: #aaa;
+    border-radius: 3px;
+    text-align: left;
+    text-indent: 10px;
+    cursor: pointer;
+}
+.select::after {
+    content: '';
+    display: block;
+    border-top: 6px solid #00b3e0;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    position: absolute;
+    top: 17px;
+    right: 15px;
+}
+.select:nth-of-type(n+2) {
+    margin-left: 24px;
+}
+.select:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    position: absolute;
+    left: -1px;
+    top: 38px;
+    z-index: 10;
+    overflow: hidden;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+}
+.dropdown-menu li {
+    width: 148px;
+    height: 38px;
+    border-bottom: 1px solid #ebebeb;
+    line-height: 38px;
+    color: #383838;
+}
+.dropdown-menu li:hover {
+    background-color: #00b7e1;
+    color: #fff;
+}
+.phone-info {
+    margin-top: 147px;
+}
+.phone-info .pic {
+    float: left;
+    margin-left: 120px;
+}
+.phone-info .info {
+    float: left;
+    margin-left: 50px;
+}
+.phone-info h2 {
+    margin-top: 100px;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 38px;
+}
+.phone-info h2 span {
+    position: relative;
+}
+.phone-info h2 span::after {
+    content: '系列';
+    position: absolute;
+    top: 0;
+    right: -34px;
+    display: block;
+    width: 30px;
+    height: 16px;
+    border: 1px solid #000;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 3px;
+}
+.phone-info h4 {
+    font-size: 18px;
+    line-height: 50px;
+}
+.phone-info .desc {
+    font-size: 14px;
+    line-height: 34px;
+}
+.phone-info .btn-group {
+    margin-top: 43px;
+}
+.phone-info .btn {
+    float: left;
+    display: block;
+    width: 130px;
+    height: 35px;
+    border: 1px solid #9a9a9a;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 35px;
+    text-align: center;
+    color: #707070;
+}
+.phone-info .btn span {
+    position: relative;
+}
+.phone-info .btn span::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #707070;
+    border-right: 1px solid #707070;
+    transform: rotate(45deg);
+    position: absolute;
+    right: -10px;
+    top: 3px;
+}
+.phone-info .red-btn span::after {
+    border-color: #fff;
+}
+.phone-info .red-btn {
+    background-color: #e5004f;
+    border-color: #e5004f;
+    color: #fff;
+}
+/* ====== 找到适合你的手机部分 end ====== */
+
+/* ====== 相关推荐 start ====== */
+h3 {
+    height: 30px;
+    margin: 30px 0 20px;
+    padding-left: 7px;
+    border-left: 3px solid #00b5e2;
+    font-size: 23px;
+}
+h3 .more {
+    float: right;
+    font-size: 14px;
+    color: #909090;
+}
+.recommend-item {
+    float: left;
+    position: relative;
+    width: 285px;
+    height: 370px;
+    background-color: #fff;
+    text-align: center;
+    transition: transform .2s linear, box-shadow .2s linear;
+}
+.recommend-item:nth-of-type(n+2) {
+    margin-left: 20px;
+}
+.recommend-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.08);
+}
+.recommend-item .title {
+    height: 62px;
+    font-size: 18px;
+    line-height: 84px;
+    font-weight: 700;
+    color: #333;
+}
+.recommend-item .subtitle {
+    font-size: 14px;
+    color: #707070;
+}
+.recommend-item img {
+    width: 180px;
+    height: 180px;
+    margin-top: 23px;
+}
+.recommend-item [class$=-tag] {
+    position: absolute;
+    top: 85px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 50%;
+}
+.recommend-item .news-tag {
+    background-color: #0071cd;
+}
+.recommend-item .hot-tag {
+    background-color: #e50150;
+}
+.recommend-item .btn-group {
+    margin: 30px auto;
+}
+.recommend-item [class$=btn] {
+    position: relative;
+    display: inline-block;
+    width: 110px;
+    height: 30px;
+    border: 1px solid #9a9a9a;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 30px;
+    text-align: center;
+    color: #707070;
+}
+.recommend-item .btn:last-child {
+    margin-left: 14px;
+}
+.recommend-item .red-btn {
+    background-color: #e5004f;
+    border-color: #e5004f;
+    color: #fff;
+}
+.recommend-item [class$=btn]::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-top: 1px solid #707070;
+    border-right: 1px solid #707070;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 21px;
+    top: 11px;
+}
+.recommend-item .red-btn::after {
+    border-color: #fff;
+}
+/* ====== 相关推荐 end ====== */
+
+/* ====== 各个商城链接 start ====== */
+.vmall {
+    position: relative;
+    height: 480px;
+    margin-top: 15px;
+    background: url(../images/flagship.jpg) 100% 100% no-repeat;
+}
+.flagship-title {
+    position: absolute;
+    top: 195px;
+    left: 243px;
+    width: 353px;
+    height: 123px;
+    background: url(../images/flagship-title.png) top left no-repeat;
+}
+.goto-btn {
+    display: inline-block;
+    width: 175px;
+    height: 43px;
+    margin: 80px;
+    background: url(../images/btn-pink.png) no-repeat;
+    font-size: 15px;
+    line-height: 43px;
+    text-align: center;
+    color: #fff;
+}
+.vmall aside {
+    float: right;
+    width: 310px;
+    color: #fff;
+}
+.vmall .title {
+    height: 95px;
+    font-size: 20px;
+    line-height: 126px;
+}
+.vmall .tips {
+    font-size: 14px;
+    margin-bottom: 48px;
+}
+.vmall .shop a {
+    float: left;
+    width: 104px;
+    height: 104px;
+    margin-right: 43px;
+    margin-bottom: 55px;
+}
+/* ====== 各个商城链接 end ====== */
+
+/* ====== 最新消息 start ====== */
+.news {
+    position: relative;
+}
+.news-item {
+    float: left;
+    width: 380px;
+    height: 329px;
+    background-color: #fff;
+}
+.news-item:nth-of-type(n+2) {
+    margin-left: 30px;
+}
+.news-item .pic {
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+}
+.news-item .pic:hover img {
+    transition: all 1s;
+}
+.news-item .pic:hover img {
+    transform: scale(1.1);
+}
+.news-item figcaption {
+    padding-left: 10px;
+}
+.news-item p {
+    font-size: 14px;
+    color: #333;
+    line-height: 39px;
+}
+.news-item time {
+    font-size: 12px;
+    color: #909090;
+    line-height: 20px;
+}
+/* ====== 最新消息 end ====== */
+
+/* ====== 服务相关 start ====== */
+.server {
+    position: relative;
+    height: 413px;
+    margin-top: 30px;
+}
+.server .mask {
+    top: 0;
+    background-position: 0 -60px;
+}
+.server-item {
+    float: left;
+    width: 50%;
+    height: 413px;
+    color: #fff;
+    text-align: center;
+}
+.server-item:first-of-type {
+    background: url(../images/index-block1.jpg) no-repeat;
+}
+.server-item:last-of-type {
+    background: url(../images/index-block2.jpg) no-repeat;
+}
+.server-item h5 {
+    height: 195px;
+    font-size: 28px;
+    line-height: 298px;
+}
+.server-item p {
+    height: 42px;
+    font-size: 18px;
+}
+.server-item a {
+    position: relative;
+    display: inline-block;
+    width: 175px;
+    height: 43px;
+    background: url(../images/btn-pink.png) no-repeat;
+    font-size: 14px;
+    line-height: 43px;
+    color: #fff;
+
+}
+.server-item a::after {
+    content: '';
+    display: block;
+    width: 9px;
+    height: 12px;
+    background: url(../images/icon-arrow-right.png) 100% no-repeat;
+    position: absolute;
+    top: 15px;
+    right: 50px;
+}
+/* ====== 服务相关 end ====== */
+
+/* ====== 到顶部 start ====== */
+.gotop {
+    position: sticky;
+    bottom: 0px;
+    margin: -164px 0 70px 100%;
+}
+.gotop a {
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin-top: 1px;
+    background-color: #00b5e2;
+    font-size: 12px;
+    line-height: 78px;
+    text-align: center;
+    color: #fff;
+}
+.gotop a:first-child {
+    background: #00b5e2 url(../images/ico-phone.png) center 6px no-repeat;
+}
+.gotop a:last-child {
+    background: #00b5e2 url(../images/icon-arrow-left.png) center 12px no-repeat;
+    background-size: 10px;
+    transform: rotate(90deg);
+}
+/* ====== 到顶部 end ====== */
