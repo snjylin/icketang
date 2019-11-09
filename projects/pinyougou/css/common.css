@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/* ====== 图标字体 ====== */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?poe98f');
+  src:  url('fonts/icomoon.eot?poe98f#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?poe98f') format('truetype'),
+        url('fonts/icomoon.woff?poe98f') format('woff'),
+        url('fonts/icomoon.svg?poe98f#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* ====== 版心 ====== */
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+/* ====== 公共头部 S ====== */
+.topbar {
+    padding: 19px 0;
+    background-color: #333;
+    font-size: 12px;
+    color: #ccc;
+}
+.news {
+    overflow: hidden;
+    position: relative;
+    height: 12px;
+    padding-left: 18px;
+}
+.news::before {
+    content: '';
+    font-family: 'icomoon';
+    position: absolute;
+    left: 0;
+}
+.news a {
+    display: block;
+}
+.top-menu a {
+    float: left;
+    padding: 0 8px;
+}
+.top-menu a:nth-child(n+2) {
+    border-left: 1px solid #55595d;
+}
+.top-menu a:last-child::before {
+    content: '';
+    font-family: 'icomoon';
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+header {
+    height: 100px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.logo {
+    position: relative;
+    margin-top: 15px;
+    padding-left: 73px;
+}
+.logo::before {
+    content: '';
+    display: block;
+    width: 63px;
+    height: 63px;
+    border-radius: 12px;
+    background: #1abc9c url(../images/logo.svg) center/40px no-repeat;
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+.logo hgroup {
+    margin-left: 73px;
+}
+h1 {
+    font-size: 27px;
+    line-height: 34px;
+    font-weight: 900;
+    color: #7f7f7f;
+}
+h3 {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #cfcdc9;
+}
+/* ====== 公共头部 E ====== */
