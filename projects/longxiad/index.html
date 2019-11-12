@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/longxiad.css">
+</head>
+<body>
+    <div class="container">
+        <!--大背景，呼吸效果的实现需要所有的图片层叠在一起-->
+        <div class="bg-pic">
+            <img src="upload/1.jpg" class="show"/>
+            <img src="upload/2.jpg"/>
+            <img src="upload/3.jpg"/>
+            <img src="upload/4.jpg"/>
+        </div>
+
+        <!--顶部导航-->
+        <ul class="nav inner">
+            <li><a href="javascript:;"><img src="images/logo.png" alt=""/></a></li>
+            <li>
+                <a href="javascript:;">
+                    <span class="zh">西柚传媒</span>
+                    <span class="en">See you</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="zh">上海创视</span>
+                    <span class="en">Chance Vision</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="zh">数字商屛</span>
+                    <span class="en">Digital screen</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="zh">柚货</span>
+                    <span class="en">Youhuo</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="zh">全诚推广</span>
+                    <span class="en">Activities</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="zh">整合传播</span>
+                    <span class="en">IMC</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="zh">关于龙禧</span>
+                    <span class="en">About</span>
+                </a>
+            </li>
+        </ul>
+
+        <!--时间轴-->
+        <div class="timeline inner">
+            <span class="see-you on"><a href="javascript:;"></a></span>
+            <span class="activities"><a href="javascript:;"></a></span>
+            <span class="you-huo"><a href="javascript:;"></a></span>
+            <span class="imc"><a href="javascript:;"></a></span>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery-1.12.3.min.js"></script>
+<script src="./js/main.js"></script>
+<!-- <script>
+    // 获取元素
+    // 所有大背景图片
+    var $showPics = $(".bg-pic>img");
+    // 所有时间轴
+    var $timeLines = $(".timeline>span");
+    // 时间轴点的数量
+    var len = $timeLines.length;
+    // console.log(len);
+
+    // 设置初始轮播索引
+    var cutIndex = 0;
+
+    // 设置图片的自动切换
+    var timer = setInterval(carousel,6000);
+
+    // 当鼠标移入container容器区域清除计时器
+    $(".container").mouseenter(function(){
+        clearInterval(timer);
+    });
+
+    // 当鼠标离开container容器区域重新开启计时器
+    $(".container").mouseleave(function(){
+        timer = setInterval(carousel,4000);
+    });
+
+
+    // 声明轮播函数
+    function carousel(){
+        // 放流氓
+        if($showPics.is(":animated")){
+            // 动画未执行完毕，什么也不做
+            return;
+        }
+
+        //当前图片淡出
+        $showPics.eq(cutIndex).fadeOut(500);
+
+        // 判断索引
+        if(++cutIndex >= len){
+            cutIndex = 0;
+        }
+
+       // 淡入当前要显示的背景图片
+       $showPics.eq(cutIndex).fadeIn(500);
+        // 对应导航的切换
+        $timeLines.eq(cutIndex).addClass("on").siblings().removeClass("on");
+    }
+
+    // 设置鼠标滑过导航切换对应背景效果
+    $timeLines.mouseenter(function(){
+        // 淡出当前图片，注意动画积累（stop()结束当前动画）
+        $showPics.eq(cutIndex).stop(true).fadeOut(500);
+
+        // 获取当前导航索引赋值给轮播索引cutIndex
+        cutIndex = $(this).index();
+
+        // 淡入当前要显示的背景图片，注意动画积累（stop()结束当前动画）
+       $showPics.eq(cutIndex).stop(true).fadeIn(500);
+        // 对应导航的切换
+        $timeLines.eq(cutIndex).addClass("on").siblings().removeClass("on");
+    });
+</script> -->
+</html>
