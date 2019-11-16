@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="css/common.css">
     <!-- 当前页面样式 -->
     <link rel="stylesheet" href="css/index.css">
-    <title>品优购</title>
+    <title>品优购 - 首页</title>
 </head>
 <body>
     <!-- 公共头部 S -->
     <div class="topbar">
         <div class="inner clearfix">
-            <div class="news fl">
+            <div class="news icomoon fl">
                 <a href="#">优品汇成为中国最大家电零售商</a>
                 <a href="#">优品汇售后退换无忧服务上线</a>
                 <a href="#">优品汇线下服务店突破1700家</a>
@@ -28,24 +28,194 @@
                 <a href="#">会员中心</a>
                 <a href="#">帮助中心</a>
                 <a href="#">在线客服</a>
-                <a href="#">手机版</a>
+                <a href="#"><i class="icomoon"></i>手机版</a>
             </div>
         </div>
     </div>
     <header>
-        <div class="inner">
+        <div class="inner clearfix">
+            <!-- logo -->
             <a href="#" class="logo">
+                <i></i>
                 <hgroup>
                     <h1>优品汇</h1>
                     <h3>惠聚优质商品</h3>
                 </hgroup>
             </a>
+            <!-- 顶部导航 -->
+            <ul class="top-nav clearfix">
+                <!-- TODO 添加导航链接 -->
+                <li class="top-nav-item cur">
+                    <a href="#">首页</a>
+                </li>
+                <li class="top-nav-item">
+                    <a href="#">服装</a>
+                    <div class="top-sub-nav">
+                        <ul class="inner clearfix">
+                            <!-- TODO 添加副导航链接 -->
+                            <li><a href="#"><i class="icon"></i><p>外衣</p></a></li>
+                            <li><a href="#"><i class="icon"></i><p>卫衣</p></a></li>
+                            <li><a href="#"><i class="icon"></i><p>裤装</p></a></li>
+                            <li><a href="#"><i class="icon"></i><p>毛衫</p></a></li>
+                            <li><a href="#"><i class="icon"></i><p>T恤</p></a></li>
+                            <li><a href="#"><i class="icon"></i><p>内衣</p></a></li>
+                            <li><a href="#"><i class="icon"></i><p>内裤</p></a></li>
+                            <li><a href="#"><i class="icon"></i><p>衬衫</p></a></li>
+                            <li><a href="#"><i class="icon"></i><p>丝袜</p></a></li>
+                            <li><a href="#"><i class="icon"></i><p>家居服</p></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="top-nav-item"><a href="#">餐厨</a></li>
+                <li class="top-nav-item"><a href="#">电器</a></li>
+                <li class="top-nav-item"><a href="#">配件</a></li>
+                <li class="top-nav-item"><a href="#">居家</a></li>
+                <li class="top-nav-item"><a href="#">洗护</a></li>
+                <li class="top-nav-item"><a href="#">婴童</a></li>
+                <li class="top-nav-item"><a href="#">杂货</a></li>
+                <li class="top-nav-item"><a href="#">饮食</a></li>
+            </ul>
+            <!-- 搜索框 -->
+            <div class="search icomoon">
+                <input type="text" placeholder="输入商品关键词">
+            </div>
+            <!-- 我的购物车 -->
+            <div class="mycart">
+                <span class="icomoon">我的购物车</span>
+                <span class="msg">3</span>
+                <div class="popup arrow-up">
+                    <ul class="shoplist clearfix">
+                        <!-- TODO 添加商品链接 -->
+                        <li class="shoplist-item clearfix">
+                            <a href="#">
+                                <div class="pic">
+                                    <img src="images/img-dark.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <p class="title">男式经典美利奴V领羊毛衫</p>
+                                    <p class="specs">黑色L（175/92A）&nbsp;&nbsp;x1</p>
+                                </div>
+                                <div class="price">¥99</div>
+                                <i class="icomoon close"></i>
+                            </a>
+                        </li>
+                        <li class="shoplist-item clearfix">
+                            <a href="#">
+                                <div class="pic">
+                                    <img src="images/img-dark.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <p class="title">男式经典美利奴V领羊毛衫</p>
+                                    <p class="specs">黑色L（175/92A）&nbsp;&nbsp;x1</p>
+                                </div>
+                                <div class="price">¥99</div>
+                                <i class="icomoon close"></i>
+                            </a>
+                        </li>
+                        <li class="shoplist-item clearfix">
+                            <a href="#">
+                                <div class="pic">
+                                    <img src="images/img-dark.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <p class="title">男式经典美利奴V领羊毛衫</p>
+                                    <p class="specs">黑色L（175/92A）&nbsp;&nbsp;x1</p>
+                                </div>
+                                <div class="price">¥99</div>
+                                <i class="icomoon close"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="buy-info">
+                        <p>
+                            共<span>3</span>件商品
+                            <br>
+                            <span class="price">297.00元</span>
+                        </p>
+                        <!-- TODO 添加购物车链接 -->
+                        <a href="#" class="btn">去购物车结算</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
     <!-- 公共头部 E -->
 
+    <div class="inner">
+        <!-- banner 轮播图 S -->
+        <div class="carsouel">
+            <img src="upload/img1.png" alt="">
+            <img src="upload/img2.png" alt="">
+            <img src="upload/img3.png" alt="">
+            <img src="upload/img1.png" alt="">
+        </div>
+        <!-- banner 轮播图 E -->
+
+        <!-- 左侧导航 S -->
+        <!-- 左侧导航 E -->
+    </div>
+
     <!-- 公共脚部 S -->
-    <footer></footer>
+    <footer>
+        <ul class="inner ft-wrapper clearfix">
+            <li class="item">
+                <p>客户服务</p>
+                <a href="#"><i class="icomoon"></i>在线客服</a>
+                <a href="#"><i class="icomoon"></i>问题反馈</a>
+            </li>
+            <li class="item">
+                <p>关注我们</p>
+                <a href="#"><i class="icomoon"></i>公众号</a>
+                <a href="#"><i class="icomoon"></i>微博</a>
+            </li>
+            <li class="item">
+                <p>下载APP</p>
+                <div>
+                    <img src="upload/qrcode.png" alt="">
+                </div>
+                <div>
+                    <p>扫描二维码查看<br>移动版原型效果</p>
+                    <a class="down" href="#">下载页面</a>
+                </div>
+            </li>
+            <li class="item">
+                <p>服务热线</p>
+                <div>
+                    <p>
+                        <strong>400-0000-000</strong> <br>
+                        周一至周日 8:00-18:00 <br>
+                        （仅收市话费）
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <div class="copyright">
+            <div class="inner">
+                <ul class="after-sale">
+                    <li><i class="icomoon"></i>30天无忧退换货</li>
+                    <li><i class="icomoon"></i>满88元免邮费</li>
+                    <li><i class="icomoon"></i>优品汇品质保证</li>
+                </ul>
+                <div class="friendlink">
+                    <a href="#">关于我们</a> |
+                    <a href="#">帮助中心</a> |
+                    <a href="#">售后服务</a> |
+                    <a href="#">配送与验收</a> |
+                    <a href="#">商务合作</a> |
+                    <a href="#">企业采购</a> |
+                    <a href="#">开放平台</a> |
+                    <a href="#">搜索推荐</a> |
+                    <a href="#">友情链接</a>
+                </div>
+                <p>CopyRight © 优品汇 2015 - 2017</p>
+            </div>
+        </div>
+        <ul class="gotop">
+            <li><a href="#"><i class="icomoon"></i>返回顶部</a></li>
+            <li><a href="#"><i class="icomoon"></i>下载APP</a></li>
+            <li><a href="#"><i class="icomoon"></i>在线客服</a></li>
+        </ul>
+    </footer>
     <!-- 公共脚部 E -->
 </body>
 </html>

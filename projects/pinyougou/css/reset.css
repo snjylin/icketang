@@ -37,6 +37,7 @@ textarea,
 summary {
 	/*设置外轮廓线*/
 	outline:0;
+    border: none;
 	background: none;
 }
 
