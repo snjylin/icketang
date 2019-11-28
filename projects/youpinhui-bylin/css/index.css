@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+.flex {
+    display: flex;
+}
+.flex_1 {
+    flex: 1;
+}
+/* ====== 轮播图 S ====== */
+.carsouel {
+    position: relative;
+    height: 430px;
+    background-color: #f2f2f2;
+}
+.carsouel li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: 362px;
+}
+.carsouel img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+/* ====== 轮播图 E ====== */

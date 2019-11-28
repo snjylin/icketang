@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+*{
+margin: 0;
+padding: 0;}
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #333;
+}
+
+body {
+    width: 100%;
+    background-color:#f6f6f6;
+    color: #333;
+    font-family: "lanting", Helvetica, "Microsoft Yahei",Arial, STHeiti, "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.4; position: relative;
+    overflow-x: hidden;}
+
+ul,ol{list-style: none}
+
+a{
+    text-decoration: none;
+    color: #000;}
+
+input, button{
+    /*border: 0; */
+    outline:0;
+    /*background: none;*/
+}
+
+img{
+    display: inline-block;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;}
+
+
+mark {background: #ff0;color: #000}
+
+.clearfix:after{
+    display: block;
+    height: 0;
+    content: "";
+    visibility: hidden;
+    clear: both;
+}
