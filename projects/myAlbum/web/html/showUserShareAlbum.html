@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/web/css/reset.css">
+    <link rel="stylesheet" href="/web/css/bootstrap.min.css">
+    <title>全部用户</title>
+    <style>
+        nav img {
+            width: 30px;
+            height: 30px;
+        }
+        .thumbnail img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-left">
+                    <a href="/web/html/index.html">
+                        <img src="/web/images/logo.png">
+                    </a>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <img src="/web/images/text.png">
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- nav -->
+    <nav>
+        <div class="container">
+            <div class="row" id="nav">
+                <!-- <img src="/web/images/default.png">
+                <span class="nickname">pika</span>
+                <a href="#">退出</a> -->
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row" id="targetUserPicList">
+                        <script type="text/template" id="tplTargetUserPicList">
+                            <div class="col-sm-6 col-md-3">
+                                <div class="thumbnail">
+                                    <img src="/web/images/floder.jpg">
+                                    <div class="caption text-center">
+                                        <a href="/web/html/showTargetUserPicList.html?username=<%username%>&albumName=<%albumName%>">
+                                            <h3><%albumName%></h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/web/js/sea.js"></script>
+    <script src="/web/js/seajs-css.js"></script>
+    <script src="/web/js/jquery.js"></script>
+    <script src="/web/js/bootstrap.min.js"></script>
+    <script>
+        // 引入入口文件
+        seajs.use('/web/modules/showUserShareAlbum/showUserShareAlbum');
+    </script>
+</body>
+</html>

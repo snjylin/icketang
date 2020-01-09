@@ -86,14 +86,6 @@ ps aux | grep -v grep | grep mongod
 ```
 mongo
 ```
-如果需要在上面的系统首选项中显式批准mongod应用程序，还必须为mongo这样做。
-
-有关使用mongo shell连接的更多信息，例如连接到运行在不同主机和/或端口上的mongod实例，请参阅mongoshell。
-
-
-
-为了帮助您开始使用MongoDB，MongoDB提供了各种驱动程序版本的入门指南。有关可用版本，请参见入门。
-
 
 ## 启动mongodb服务端出现错误汇总
 1 `Failed to unlink socket file /tmp/mongodb-27017.sock

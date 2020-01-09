@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/web/css/reset.css">
+    <link rel="stylesheet" href="/web/css/bootstrap.min.css">
+    <title>我的相册</title>
+    <style>
+        nav img {
+            width: 30px;
+            height: 30px;
+        }
+
+        #manageAlbum .list-group-item {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #manageAlbum .list-group-item>div {
+            flex: 1;
+        }
+
+        #listGroup .del {
+            cursor: pointer;
+        }
+        .thumbnail img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-left">
+                    <a href="/web/html/index.html">
+                        <img src="/web/images/logo.png">
+                    </a>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <img src="/web/images/text.png">
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- nav -->
+    <nav>
+        <div class="container">
+            <div class="row" id="nav">
+                <!-- <img src="/web/images/default.png">
+                <span class="nickname">pika</span>
+                <a href="#">退出</a> -->
+            </div>
+        </div>
+    </nav>
+    <!-- content -->
+    <div class="content">
+        <div class="container">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">全部用户</a></li>
+                <li role="presentation" class="active" style="display: none;"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">我的相册</a></li>
+                <li role="presentation" style="display: none;"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">管理相册</a></li>
+                <li role="presentation" style="display: none;"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">修改信息</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- 全部用户 -->
+                <div role="tabpanel" class="tab-pane" id="home">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row" id="userShareAlbum">
+                                <script type="text/template" id="tplUserShareAlbum">
+                                    <div class="col-sm-6 col-md-3">
+                                        <div class="thumbnail">
+                                            <img src="/web/images/floder.jpg">
+                                            <div class="caption text-center">
+                                                <a href="/web/html/showUserShareAlbum.html?username=<%username%>&albumName=<%albumName%>">
+                                                    <h3><%username%></h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 我的相册 -->
+                <div role="tabpanel" class="tab-pane active" id="profile">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row" id="myAlbums">
+                                <script type="text/template" id="tplMyAlbums">
+                                    <div class="col-sm-6 col-md-3" data-albumName="<%albumName%>">
+                                        <div class="thumbnail">
+                                            <img src="/web/images/floder.jpg">
+                                            <div class="caption text-center">
+                                                <a href="/web/html/userAlbums.html?albumName=<%albumName%>">
+                                                    <h3><%albumName%></h3>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 管理相册 -->
+                <div role="tabpanel" class="tab-pane" id="messages">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">创建相册</div>
+                                <div class="panel-body">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="请输入相册名称" id="albumInp">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button" id="albumBtn">创建相册</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="panel panel-default" id="manageAlbum">
+                                <div class="panel-heading">操作相册</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <span>相册名称</span>
+                                            <span>相册是否共享</span>
+                                            <span>删除相册</span>
+                                        </li>
+                                    </ul>
+                                    <ul class="list-group text-center" id="listGroup">
+                                        <script type="text/template" id="tplListGroup">
+                                            <li class="list-group-item">
+                                                <div><span><%albumName%></span></div>
+                                                <div><input type="checkbox" class="ipt" <%checked%> data-albumName=<%albumName%>></div>
+                                                <div><span class="del" data-albumName=<%albumName%>>&times;</span></div>
+                                            </li>
+                                        </script>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 修改信息 -->
+                <div role="tabpanel" class="tab-pane" id="settings">
+                    <form id="formSettings">
+                        <ul class="list-group text-center">
+                            <li class="list-group-item">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">修改密码</div>
+                                    <div class="panel-body">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button">修改</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">修改年龄</div>
+                                    <div class="panel-body">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button">修改</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">修改性别</div>
+                                    <div class="panel-body">
+                                        <div class="input-group">
+                                            <input type="radio" name="value" value="男">男
+                                            <input type="radio" name="value" value="女">女
+                                            <input type="radio" name="value" value="保密">保密
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button">修改</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">修改头像</div>
+                                    <div class="panel-body">
+                                        <div class="input-group">
+                                            <input type="file" placeholder="" value="">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button">修改</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/web/js/sea.js"></script>
+    <script src="/web/js/seajs-css.js"></script>
+    <script src="/web/js/jquery.js"></script>
+    <script src="/web/js/bootstrap.min.js"></script>
+    <script>
+        // 引入入口文件
+        seajs.use('/web/modules/index/main');
+    </script>
+</body>
+
+</html>
