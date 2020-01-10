@@ -10,10 +10,11 @@ define(function(require, exports, module) {
     let Observer = tools.Observer;
 
     // 获取元素
-    $albumInp = $('#albumInp');
-    $albumBtn = $('#albumBtn');
-    $listGroup = $('#listGroup');
-    $tplListGroup = $('#tplListGroup').html();
+    let $messages = $('[href="#messages"]');
+    let $albumInp = $('#albumInp');
+    let $albumBtn = $('#albumBtn');
+    let $listGroup = $('#listGroup');
+    let $tplListGroup = $('#tplListGroup').html();
 
     // 获取token
     let token = localStorage.getItem('token');
@@ -46,27 +47,30 @@ define(function(require, exports, module) {
         });
     });
 
-    // 发送请求
-    $.ajax({
-        url: '/user/getUserAlbumsList',
-        type: 'get',
-        dataType: 'json',
-        data: { token },
-        success(res) {
-            if (!res.error) {
-                let html = '';
-                res.data.forEach(function(item, index) {
-                    // 处理数据
-                    item.checked = (item.share === 'true') ? 'checked' : '';
-                    // 渲染视图
-                    // 格式化模版
-                    html += format($tplListGroup, item);
-                });
-                // 上树
-                $listGroup.append(html);
-                return;
+    $messages.click(function() {
+        // 发送请求
+        $.ajax({
+            url: '/user/getUserAlbumsList',
+            type: 'get',
+            dataType: 'json',
+            data: { token },
+            success(res) {
+                if (!res.error) {
+                    $listGroup.html('');
+                    let html = '';
+                    res.data.forEach(function(item, index) {
+                        // 处理数据
+                        item.checked = (item.share === 'true') ? 'checked' : '';
+                        // 渲染视图
+                        // 格式化模版
+                        html += format($tplListGroup, item);
+                    });
+                    // 上树
+                    $listGroup.append(html);
+                    return;
+                }
             }
-        }
+        });
     });
 
     // 使用jquery中的委托模式

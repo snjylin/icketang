@@ -7,33 +7,38 @@ define(function(require, exports, module) {
     // 引入观察者对象
     let Observer = tools.Observer;
     // 获取元素
+    let $profile = $('[href="#profile"]');
     let $myAlbums = $('#myAlbums');
     let tplMyAlbums = $('#tplMyAlbums').html();
     // 获取token
     let token = localStorage.getItem('token');
-    // 发送请求
-    $.ajax({
-        url: '/user/getAlbumLists',
-        type: 'get',
-        dataType: 'json',
-        data: {
-            token
-        },
-        success(res) {
-            if (!res.error) {
-                // 定义变量存放格式化后的模版
-                let html = '';
-                // 格式化模版
-                res.data && res.data.forEach(item => {
-                    html += format(tplMyAlbums, item);
-                })
-                // 上树
-                $myAlbums.append(html);
-                return;
+
+    $profile.click(function() {
+        // 发送请求
+        $.ajax({
+            url: '/user/getAlbumLists',
+            type: 'get',
+            dataType: 'json',
+            data: {
+                token
+            },
+            success(res) {
+                if (!res.error) {
+                    $myAlbums.html('');
+                    // 定义变量存放格式化后的模版
+                    let html = '';
+                    // 格式化模版
+                    res.data && res.data.forEach(item => {
+                        html += format(tplMyAlbums, item);
+                    })
+                    // 上树
+                    $myAlbums.append(html);
+                    return;
+                }
+                // 发布消息
+                Observer.trigger('msg', res.data);
             }
-            // 发布消息
-            Observer.trigger('msg', res.data);
-        }
+        });
     });
     // 监听消息
     Observer.on('addAlbum', data => {

@@ -1,6 +1,5 @@
 // 定义模块
 define(function(require, exports, module) {
-    console.log('showTargetUserPicList');
     // 加载nav模块
     require('../index/nav/nav');
     // 引入tools
@@ -10,41 +9,48 @@ define(function(require, exports, module) {
     // 获取元素
     let $targetUserImgs = $('#targetUserImgs');
     let tplTargetUserImgs = $('#tplTargetUserImgs').html();
-    // 获取token
-    let token = localStorage.getItem('token');
-    // 获取相册名
-    let albumName = location.search.split('?')[1];
+    // 获取query
+    let query = location.search.slice(1);
+    // 处理query
+    let query_arr = query.split('&');
+    // 处理query得到分享相册的用户名
+    let username = query_arr[0].split('=')[1];
+    // 处理query得到分享的相册的名
+    let albumName = query_arr[1].split('=')[1];
 
-    // 发送请求
-    $.ajax({
-        url: '/getTargetUserPicList',
-        type: 'get',
-        dataType: 'json',
-        data: {
-            token
-        },
-        success(res) {
-            res.data = [
-                { "username" : "xiaohong", "albumName" : "aaa", "share" : "true", "img_path": "/user/xiaohong/header_pic/default.png" },
-                { "username" : "xiaohong", "albumName" : "bbb", "share" : "true", "img_path": "/user/xiaohong/header_pic/default.png" },
-                { "username" : "xiaohong", "albumName" : "adfs", "share" : "true", "img_path": "/user/xiaohong/header_pic/default.png" },
-                { "username" : "xiaoxiao", "albumName" : "ddd", "share" : "true", "img_path": "/user/xiaohong/header_pic/default.png" },
-                { "username" : "xiaoxiao", "albumName" : "dasf", "share" : "true", "img_path": "/user/xiaohong/header_pic/default.png" }
-            ]
-            console.log(res.data);
-
-            if (!res.error) {
-                // 定义变量存放格式化后的模版
-                let html = '';
-                // 格式化模版
-                res.data.forEach(item => {
-                    html += format(tplTargetUserImgs, item);
-                })
-                // 上树
-                $targetUserImgs.append(html);
-                return;
+    function getTargetUserPicList(resolve, reject) {
+        // 发送请求
+        $.ajax({
+            url: '/getTargetUserPicList',
+            type: 'get',
+            dataType: 'json',
+            data: {
+                username,
+                albumName
+            },
+            success(res) {
+                resolve(res);
+            },
+            error(err) {
+                reject(err);
             }
+        });
+    }
 
+    new Promise((resolve, reject) => {
+        getTargetUserPicList(resolve, reject);
+    }).then(res => {
+        if (!res.error) {
+            // 定义变量存放格式化后的模版
+            let html = '';
+            // 格式化模版
+            res.data.forEach(item => {
+                html += format(tplTargetUserImgs, item);
+            })
+            // 上树
+            $targetUserImgs.append(html);
+            return;
         }
-    });
+    }, err => {
+    })
 })

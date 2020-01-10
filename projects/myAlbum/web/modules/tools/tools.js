@@ -15,6 +15,12 @@ define(function(require, exports, module) {
                 let patt = /^\d{6,12}$/;
                 // 验证
                 return patt.test(num) ? '' : '请输入6-12位阿拉伯数字'
+            },
+            age(num) {
+                // 定义正则表达式
+                let patt = /^\d{1,3}$/;
+                // 验证
+                return patt.test(num) ? '' : '请输入1-3位阿拉伯数字'
             }
         };
         // 返回接口对象

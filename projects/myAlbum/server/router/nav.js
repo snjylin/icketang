@@ -19,18 +19,30 @@ let collname = 'user';
 
 // 处理getUserInfo请求
 router.get('/getUserInfo', (req, res) => {
-    // 获取用户信息
-    let token = req.token;
-    if (token) {
+    // 获取用户名称
+    let username = req.token.username;
+
+    // 连接数据库
+    let db = new Database(connectStr, dbname, collname);
+    // 查找数据
+    db.findOne({ username }, (err, result) => {
+        if (err) {
+            // 返回错误信息
+            res.send({
+                error: 1,
+                data: '查找用户数据失败了'
+            })
+            return;
+        }
+        // 返回成功之后的信息
         res.send({
             error: 0,
-            data: token
+            data: {
+                username: result.username,
+                header_pic: result.header_pic,
+                header_path: result.header_path
+            }
         })
-        return;
-    }
-    res.send({
-        error: 1,
-        data: '用户未登录'
     })
 });
 

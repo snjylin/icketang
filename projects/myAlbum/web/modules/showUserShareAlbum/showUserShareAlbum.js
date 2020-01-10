@@ -9,26 +9,21 @@ define(function(require, exports, module) {
     // 获取元素
     let $targetUserPicList = $('#targetUserPicList');
     let tplTargetUserPicList = $('#tplTargetUserPicList').html();
-    // 获取token
-    let token = localStorage.getItem('token');
+    // 获取query
+    let query = location.search.slice(1);
+    // 处理query
+    let query_arr = query.split('=');
+    // 处理query得到分享相册的用户名
+    let username = query_arr[1];
     // 发送请求
     $.ajax({
         url: '/getUserShareAlbum',
         type: 'get',
         dataType: 'json',
         data: {
-            token
+            username
         },
         success(res) {
-            res.data = [
-                { "username" : "xiaohong", "albumName" : "aaa", "share" : "true" },
-                { "username" : "xiaohong", "albumName" : "bbb", "share" : "true" },
-                { "username" : "xiaohong", "albumName" : "adfs", "share" : "true" },
-                { "username" : "xiaoxiao", "albumName" : "ddd", "share" : "true" },
-                { "username" : "xiaoxiao", "albumName" : "dasf", "share" : "true" }
-            ]
-            console.log(res.data);
-
             if (!res.error) {
                 // 定义变量存放格式化后的模版
                 let html = '';

@@ -128,7 +128,7 @@ define(function(require, exports, module) {
                     // 跳转到登录页面
                     setTimeout(() => {
                         location.href = '/web/html/login.html'
-                    },1500);
+                    },1000);
                 }
             },
             error(err) {
