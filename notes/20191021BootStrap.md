@@ -1,5 +1,5 @@
-## 复习
-#### 兼容移动端代码
+# 复习
+## 兼容移动端代码
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- device-width是屏幕物理宽度，和视口宽度不同 -->
@@ -12,7 +12,7 @@
 </script>
 ```
 
-#### 媒介查询  media属性
+## 媒介查询  media属性
 响应式布局可以在不同的视口下，呈现不同的效果
 实现的原理通过媒介查询完成
 媒介查询的使用，有如下几种：
@@ -51,7 +51,7 @@
     line-height
 盒子的属性不可以被继承
 
-## Bootstrap
+# Bootstrap
 Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。
 [Bootstrap 官方文档](https://www.bootcss.com/)
 [Bootstrap 教程](https://www.runoob.com/bootstrap/bootstrap-tutorial.html)

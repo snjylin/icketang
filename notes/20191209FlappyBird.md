@@ -1,4 +1,4 @@
-## 复习
+# 复习
 Canvas
 HTML5中新增画图标签canvas
 canvas仅仅用来提供画布，默认的宽高300*150，且画布的宽高只能在html属性中设置。
@@ -53,7 +53,7 @@ canvas仅仅用来提供画布，默认的宽高300*150，且画布的宽高只�
     globalCompositeOperation属性
     ctx.globalCompositeOperation
 
-## 游戏
+# 游戏
 写游戏：面向对象的思想，分类管理
 
 游戏分析：
