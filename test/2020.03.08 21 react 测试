@@ -1,0 +1,53 @@
+1 redux中，直接修改state数据对象会有什么问题，如何解决？  
+    直接修改state数据对象，数据会丢失。  
+    解决：  
+        1 定义结果对象  
+        2 用state和action数据修改结果对象  
+        3 将state和结果对象合并成新对象并返回。  
+  
+2 为何要使用异步action，以及如何使用异步action  
+    当一个组件发布请求获取的数据，需要在其它组件中使用的时候，使用异步action。  
+    首先通过applyMiddleware方法拓展createStore方法。  
+    用新的createStore方法创建store对象。  
+    异步action时候一个函数，函数的返回值是一个方法  
+    该方法的参数是dispatch，在方法中，我们发布异步请求  
+    请求返回的时候，用dispatch方法提交同步action。  
+  
+3 如何使用富文本编辑器  
+    1 引入quill模块中的样式文件  
+    2 在react-quill中引入富文本编辑器组件  
+    3 在组件中使用富文本编辑器组件  
+  
+4 按需加载与按需打包可以解决什么问题，有什么区别。  
+    它们是用来解决资源加载的性能问题的，加快资源的加载，提升用户体验  
+    区别  
+        按需加载：需要什么加载什么，发生在浏览器端  
+        按需打包：需要什么打包什么，发生在编译阶段  
+  
+5 如何将antd-mobile模块按需打包  
+    在babel-loader的options.plugins中引入import插件  
+    在参数配置中：  
+        通过libraryName定义模块名称  
+        通过style定义引入的样式  
+  
+6 如何使用element-react中的组件  
+    安装样式  
+    直接从模块中引入组件即可  
+  
+7 在表单校验中，定义校验规则rules，可以为每一条规则传递哪些属性  
+    required    必填项设置  
+    message     出现错误的提示文案  
+    trigger     触发校验的事件  
+    validator   校验方法  
+  
+8 如何用create-react-app创建项目  
+    create-react-app 项目名称  
+  
+9 create-react-app提供了哪些指令  
+    start   启动项目  
+    build   发布项目  
+    eject   输出webpack配置  
+    test    启动单元测试  
+  
+10 什么是PWA应用？  
+    PWA应用是渐进式web应用，介于网站与源生APP的应用，开发快，用户可以快速获取，具有一定的源生应用特性等。  
